@@ -1,0 +1,14 @@
+img {
+    height: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.card {
+    height: 400px;
+    p {
+        height: 100px;
+        overflow-y: scroll;
+    }
+}

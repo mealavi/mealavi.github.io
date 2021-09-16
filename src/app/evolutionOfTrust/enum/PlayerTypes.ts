@@ -1,0 +1,8 @@
+export enum PlayerType{
+    COPYCAT="COPYCAT",
+    CHEATER="CHEATER",
+    DETECTIVE="DETECTIVE",
+    GRUDGER="GRUDGER",
+    INNOCENT="INNOCENT"
+
+}
