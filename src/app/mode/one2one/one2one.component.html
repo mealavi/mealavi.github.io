@@ -1,0 +1,66 @@
+<div fxLayout="row" style="padding: 40px;">
+    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="20%">
+
+        <div fxLayout="row">
+            <mat-form-field appearance="standard" color=warn>
+                <mat-label>Player 1</mat-label>
+                <mat-select [(ngModel)]="player1" name="p1">
+                    <mat-option *ngFor="let player of Players" [value]="player">
+                        {{player}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="standard" color=warn>
+                <mat-label>Player 2</mat-label>
+                <mat-select [(ngModel)]="player2" name="p2">
+                    <mat-option *ngFor="let player of Players" [value]="player">
+                        {{player}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-label>Round </mat-label>
+
+            <mat-slider color=warn thumbLabel step="1" min="1" max="20" aria-label="Round" [(ngModel)]=roundValue>
+            </mat-slider>
+        </div>
+        <div style="padding: 10px;">
+            <button mat-flat-button color="warn" fxFlex="100%" (click)="play()">Play</button>
+        </div>
+
+
+
+
+
+    </div>
+    <mat-divider vertical></mat-divider>
+
+    <div fxLayout="row" fxLayoutAlign="space-evenly start" fxFlex="60%">
+        <div fxLayout="column">
+            <h1>{{player1}}</h1>
+            <div *ngIf="resultReady" style="text-align: center;">
+                <h1>{{result[0].coin}}</h1>
+                <div *ngFor="let item of result[1].partnersDecisions;">
+                    <span>{{item==0?"CHEAT":"COOPRATE"}}</span>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+
+        </div>
+        <div fxLayout="column">
+            <h1>{{player2}}</h1>
+
+            <div *ngIf="resultReady" style="text-align: center;">
+                <h1>{{result[1].coin}}</h1>
+                <div *ngFor="let item of result[0].partnersDecisions;">
+                    <span>{{item==0?"CHEAT":"COOPRATE"}}</span>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

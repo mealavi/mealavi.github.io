@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 import { PlayerType } from './evolutionOfTrust/enum/PlayerTypes';
 
 import { Player } from './evolutionOfTrust/Player';
@@ -8,6 +9,7 @@ import { Detective } from './evolutionOfTrust/players/Detective';
 import { Grudger } from './evolutionOfTrust/players/Grudger';
 import { Innocent } from './evolutionOfTrust/players/Innocent';
 import { PlayerSubjectService } from './service/player-subject.service';
+import { UtilService } from './service/util.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,7 @@ export class AppComponent implements OnInit {
 
   population: Map<PlayerType, number> = new Map();
 
-  constructor(private playerService: PlayerSubjectService) {
+  constructor(private playerService: PlayerSubjectService, private util: UtilService) {
     this.population.set(PlayerType.CHEATER, 1);
     this.population.set(PlayerType.COPYCAT, 1);
     this.population.set(PlayerType.DETECTIVE, 1);
@@ -35,13 +37,16 @@ export class AppComponent implements OnInit {
     this.playerList.push(new Copycat());
     this.playerList.push(new Grudger());
     this.playerList.push(new Innocent());
-    
+
     this.playerService.getMessage().subscribe(message => {
       let key = Array.from(message.keys())[0]
       let number: number = Number(Array.from(message.values())[0]);
       this.population.set(key, number);
     });
 
+  }
+  tabChanged(e: MatTabChangeEvent) {
+    this.util.sendGameMode(e.index)
   }
 
 

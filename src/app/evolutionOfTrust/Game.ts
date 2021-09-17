@@ -10,7 +10,8 @@ import { Innocent } from "./players/Innocent";
 
 export class Game {
 
-    doOne2One(p1: Player, p2: Player, round: number) {
+    doOne2One(p1: Player, p2: Player, round: number): Array<Player> {
+        let result: Array<Player> = new Array();
         for (let i = 0; i < round; i++) {
             try {
                 this.run(p1, p2);
@@ -20,7 +21,10 @@ export class Game {
             }
 
         }
+        result.push(p1);
+        result.push(p2);
 
+        return result;
     }
 
 

@@ -1,18 +1,21 @@
-<mat-card class="card" >
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src={{img}} alt="photo of player">
-    <mat-card-title fxLayoutAlign="space-around">{{player.playerType}}</mat-card-title>
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{img}} alt="photo of player">
+  <mat-card-title fxLayoutAlign="space-around">{{player.playerType}}</mat-card-title>
 
-    <mat-card-content>
-      <p>
-        {{player.description}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions fxLayoutAlign="space-around end"> 
-      Population:<input matInput t type="number" min="0" max="20" #value (blur)="onLeave($event.target)" value="1" />
-    </mat-card-actions>
+  <mat-card-content>
+    <p>
+      {{player.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="space-around end">
+    <mat-form-field appearance="standard" fxFlex="30%" *ngIf="gameMode">
+      <mat-label>Population</mat-label>
+      <input matInput t type="number" min="0" max="20" #value (blur)="onLeave($event.target)" value="1" style="text-align: center;"/>
+    </mat-form-field>
+  </mat-card-actions>
 
-  </mat-card>
+</mat-card>

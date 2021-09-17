@@ -17,7 +17,7 @@ export class ChartComponent implements OnInit {
 
 
 
-  /*   type = 'pie';
+/*      type = 'pie';
     data = {
       labels: Array.of(),
       datasets: [
@@ -30,7 +30,7 @@ export class ChartComponent implements OnInit {
     options = {
       responsive: true,
       maintainAspectRatio: false
-    }; */
+    };  */
   constructor() {
 
     for (let i = 0; i < this.playerList.length; i++) {
