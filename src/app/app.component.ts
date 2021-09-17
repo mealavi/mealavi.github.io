@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { PlayerType } from './evolutionOfTrust/enum/PlayerTypes';
+
 import { Player } from './evolutionOfTrust/Player';
 import { Cheater } from './evolutionOfTrust/players/Cheater';
 import { Copycat } from './evolutionOfTrust/players/Copycat';
 import { Detective } from './evolutionOfTrust/players/Detective';
 import { Grudger } from './evolutionOfTrust/players/Grudger';
 import { Innocent } from './evolutionOfTrust/players/Innocent';
+import { PlayerSubjectService } from './service/player-subject.service';
 
 @Component({
   selector: 'app-root',
@@ -15,20 +18,15 @@ export class AppComponent implements OnInit {
 
   playerList = new Array<Player>();
 
-  type = 'pie';
-  data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "My First dataset",
-        data: [65, 59, 80, 81, 56, 55, 40]
-      }
-    ]
-  };
-  options = {
-    responsive: true,
-    maintainAspectRatio: false
-  };
+  population: Map<PlayerType, number> = new Map();
+
+  constructor(private playerService: PlayerSubjectService) {
+    this.population.set(PlayerType.CHEATER, 1);
+    this.population.set(PlayerType.COPYCAT, 1);
+    this.population.set(PlayerType.DETECTIVE, 1);
+    this.population.set(PlayerType.INNOCENT, 1);
+    this.population.set(PlayerType.GRUDGER, 1);
+  }
 
   ngOnInit(): void {
 
@@ -37,9 +35,14 @@ export class AppComponent implements OnInit {
     this.playerList.push(new Copycat());
     this.playerList.push(new Grudger());
     this.playerList.push(new Innocent());
-
-
-
+    
+    this.playerService.getMessage().subscribe(message => {
+      let key = Array.from(message.keys())[0]
+      let number: number = Number(Array.from(message.values())[0]);
+      this.population.set(key, number);
+    });
 
   }
+
+
 }

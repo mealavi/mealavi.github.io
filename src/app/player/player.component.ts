@@ -1,9 +1,8 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Subject } from 'rxjs';
 import { PlayerType } from '../evolutionOfTrust/enum/PlayerTypes';
 import { Player } from '../evolutionOfTrust/Player';
-import { Cheater } from '../evolutionOfTrust/players/Cheater';
 import { Copycat } from '../evolutionOfTrust/players/Copycat';
+import { PlayerSubjectService } from '../service/player-subject.service';
 
 @Component({
   selector: 'app-player',
@@ -14,9 +13,8 @@ export class PlayerComponent implements OnInit {
 
   @Input() player: Player = new Copycat();
   img: string = "";
-  subject = new Subject<Map<PlayerType, number>>()
 
-  constructor() { }
+  constructor(private playerService: PlayerSubjectService) { }
 
   ngOnInit(): void {
     switch (this.player.playerType) {
@@ -50,7 +48,6 @@ export class PlayerComponent implements OnInit {
   onLeave(e: any) {
     let log = new Map<PlayerType, number>();
     log.set(this.player.playerType, e.value);
-    this.subject.next(log);
-    console.log(log)
+    this.playerService.sendMessage(log);
   }
 }

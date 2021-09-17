@@ -1,14 +1,13 @@
-<div fxLayout="column">
-  <h2 fxLayoutAlign="space-around">Evolution of trust</h2>
+<div fxLayout="column" class="row">
+  <h2 fxLayoutAlign="space-around" class="row">Evolution of trust</h2>
   <div fxLayout="row" fxLayoutAlign="space-around">
-    <div *ngFor="let p of playerList" fxFlex="15%">
+    <div *ngFor="let p of playerList" fxFlex="14%">
       <app-player [player]=p></app-player>
     </div>
 
   </div>
-  <div fxLayout="row" >
-    <chart [type]="type" [data]="data" [options]="options" fxFlex="100%"></chart>
-    <chart [type]="type" [data]="data" [options]="options" fxFlex="100%"></chart>
+  <div fxLayout="row" class="row">
+    <app-chart></app-chart>
   </div>
 
 

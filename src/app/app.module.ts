@@ -9,12 +9,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'angular2-chartjs';
+import { ChartComponent } from './chart/chart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent
+    PlayerComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
