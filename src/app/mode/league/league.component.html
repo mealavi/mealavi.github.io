@@ -1,0 +1,66 @@
+<div fxLayout="row" style="padding: 40px;">
+    <div fxLayout="column" fxLayoutAlign="start center" fxFlex="20%">
+        <div class="guide">
+            <span>It's tournament time! Each character will now play against every other character: that's {{matchPairs}} paired
+                matches, and {{roundValue}}  rounds per match.</span><br>
+            <p>*Hint: Maximum number of each player can be 20</p>
+        </div>
+
+
+        <div>
+            <ul>
+                <div fxLayout="row" class="listItem">
+                    <b> {{copycatNumber}}</b>
+                    <span>COPYCAT </span>
+                </div>
+                <div fxLayout="row" class="listItem">
+                    <b> {{cheaterNumber}}</b>
+                    <span>CHEATER </span>
+                </div>
+                <div fxLayout="row" class="listItem">
+                    <b> {{grudgerNumber}}</b>
+                    <span>GRUDGER </span>
+                </div>
+                <div fxLayout="row" class="listItem">
+                    <b> {{detectiveNumber}}</b>
+                    <span>DETECTIVE </span>
+                </div>
+                <div fxLayout="row" class="listItem">
+                    <b> {{innocentNumber}}</b>
+                    <span>INNOCENT </span>
+                </div>
+                <mat-divider ></mat-divider>
+                <div fxLayout="row" class="listItem">
+                    <p style="font-size: 17px;font-weight: 500; margin-right: 10px;"> Total:</p>
+                    <p style="font-size: 17px;font-weight: 500;"> {{sumOfPlayer }}</p>
+                    
+                </div>
+
+            </ul>
+        </div>
+        <div>
+            <mat-label>Round </mat-label>
+
+            <mat-slider color=warn thumbLabel step="1" min="1" max="20" aria-label="Round" [(ngModel)]=roundValue>
+            </mat-slider>
+        </div>
+        <div style="padding: 10px;">
+            <button mat-flat-button color="warn" fxFlex="100%" (click)="play()">Play</button>
+        </div>
+
+
+
+
+
+    </div>
+    <mat-divider vertical></mat-divider>
+    <div fxFlex="70%">
+        <chart [type]="type" [data]="data" [options]="options" fxFlex="90%"></chart>
+    </div>
+
+    <div fxLayout="column">
+        <div>Average Score : {{averageWealth}}</div>
+        <div>Round : {{roundValue}}</div>
+        <div>Total Matchs : {{matchPairs}}</div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.listItem {
+    li {
+        padding: 5px;
+    }
+    b {
+        margin-right: 5px;
+    }
+}
+.guide {
+    border: 0.5px dashed rgba(128, 128, 128, 0.5);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    &::first-letter {
+        font-size: 25px;
+        color: Black;
+    }
+    p {
+        font-style: italic;
+    }
+}

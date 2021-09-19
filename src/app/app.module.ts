@@ -18,6 +18,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import { LeagueComponent } from './mode/league/league.component';
 import {MatTableModule} from '@angular/material/table';
+import { DarwinComponent } from './mode/darwin/darwin.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatTableModule} from '@angular/material/table';
     PlayerComponent,
     ChartComponent,
     One2oneComponent,
-    LeagueComponent
+    LeagueComponent,
+    DarwinComponent
   ],
   imports: [
     BrowserModule,
