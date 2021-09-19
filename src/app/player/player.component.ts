@@ -27,8 +27,11 @@ export class PlayerComponent implements OnInit {
 
   }
   onLeave(e: any) {
+    this.sendPlayerNumber(e.value);
+  }
+  sendPlayerNumber(q: number) {
     let log = new Map<PlayerType, number>();
-    log.set(this.player.playerType, e.value);
+    log.set(this.player.playerType, q);
     this.playerService.sendMessage(log);
   }
   getImgSrc(playerType: PlayerType): string {

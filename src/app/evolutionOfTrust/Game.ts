@@ -98,7 +98,7 @@ export class Game {
 
     }
 
-    createList(grudger: number = 1, cheater: number = 1, copycat: number = 1, detective: number = 1, innoncent: number = 1): Array<Player> {
+   static createList(grudger: number = 1, cheater: number = 1, copycat: number = 1, detective: number = 1, innoncent: number = 1): Array<Player> {
         let playerList: Array<Player> = new Array<Player>();
 
         for (let i = 0; i < grudger; i++) {

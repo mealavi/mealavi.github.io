@@ -8,14 +8,18 @@
   </div>
 
 
-  <div class="row" >
-    <mat-tab-group mat-align-tabs="center" (selectedTabChange)="tabChanged($event)" >
-      <mat-tab label="One To One" >
-        <div  >
+  <div class="row">
+    <mat-tab-group mat-align-tabs="center" (selectedTabChange)="tabChanged($event)">
+      <mat-tab label="One To One">
+        <div>
           <app-one2one></app-one2one>
         </div>
       </mat-tab>
-      <mat-tab label="League">League</mat-tab>
+      <mat-tab label="League">
+        <div>
+          <app-league></app-league>
+        </div>
+      </mat-tab>
       <mat-tab label="Darwin Mode">Darwin Mode</mat-tab>
     </mat-tab-group>
   </div>

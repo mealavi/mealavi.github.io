@@ -16,7 +16,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
-
+import { LeagueComponent } from './mode/league/league.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     PlayerComponent,
     ChartComponent,
-    One2oneComponent
+    One2oneComponent,
+    LeagueComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatDividerModule,
     MatSelectModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    
  
 
   ],
