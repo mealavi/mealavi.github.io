@@ -1,27 +1,9 @@
-# EotApp
+# Inspiration
+Inspired by Nicky Case's project I've decided to make my visualization of the [evolution of trust](mealavi.github.io) project. I have made my version to give more flexibility to the game player and give more information like the total wealth of society. It is also more clear in terms of programming logic, as it's written in Typescript and benefits from OOP features in comparison to pure JS.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+## "The Evolution of Trust"
+This interactive guide is heavily based off Robert Axelrod's groundbreaking 1984 book, The Evolution of Cooperation! I was also heavily inspired by his 1997 sequel, The Complexity of Cooperation, and Robert Putnam's 2000 book on America's declining "social capital", Bowling Alone.
+## "The Game of Trust"
+This game is also known in game theory as the infamous Prisoner's Dilemma. The Prisoner's Dilemma is named after a story where two suspects can either squeal on their partner-in-crime ("cheat"), or stay silent ("cooperate"). I chose not to do this story because 1) in this case, both players "cooperating" would be bad for society, and 2) it's unrealistic, everyone knows that snitches get stitches
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## to play visit https://mealavi.github.io/
