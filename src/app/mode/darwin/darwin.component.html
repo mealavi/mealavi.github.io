@@ -1,10 +1,16 @@
 <div fxLayout="row" style="padding: 40px;">
     <div fxLayout="column" fxLayoutAlign="start center" fxFlex="20%">
         <div class="guide">
-            <span>It's tournament time! Each character will now play against every other character: that's
-                {{matchPairs}} paired
-                matches, and {{roundValue}} rounds per match.</span><br>
-            <p>*Hint: Maximum number of each player is 20</p>
+            <span>Now, let's let our population of players evolve over time. It's a 3-step dance:</span><br><br>
+            <p>1. PLAY A TOURNAMENT
+                Let them all play against each other, and tally up their scores.</p>
+            <p>2. ELIMINATE LOSERS
+                Get rid of the 20% worst players. (if there's a tie, pick randomly between them)</p>
+            <p>3. REPRODUCE WINNERS
+                Clone the 5 best players. (if there's a tie, pick randomly between them)</p>
+            <span>...and REPEAT, for as long as you'd like. Note: you don't have to wait for people to literally die &
+                reproduce for culture to evolve -- all that's needed is that "unsuccessful" behaviors go away, and
+                "successful" behaviors are imitated. So now...</span>
         </div>
 
 
@@ -71,11 +77,11 @@
         <div>Average Score: {{averageWealth}}</div>
         <div>Round: {{roundValue}}</div>
         <div>Mutation: {{mutatuionValue}}</div>
-        <div>Total Matchs: {{matchPairs}}</div>
-        <mat-divider ></mat-divider>
+        <div>Total Matchs: {{matchPairs * mutatuionValue}}</div>
+        <mat-divider></mat-divider>
 
         <div *ngFor="let player of playerReport | keyvalue" style="margin-top:10px">
-            <div>{{player.key}}  --> {{player.value}}</div> 
+            <div>{{player.key}} --> {{player.value}}</div>
 
         </div>
     </div>
