@@ -1,5 +1,5 @@
 # Inspiration
-Inspired by Nicky Case's project I've decided to make my visualization of the [evolution of trust](mealavi.github.io) project. I have made my version to give more flexibility to the game player and give more information like the total wealth of society. It is also more clear in terms of programming logic, as it's written in Typescript and benefits from OOP features in comparison to pure JS.
+Inspired by Nicky Case's project I've decided to make my visualization of the [evolution of trust](https://mealavi.github.io) project. I have made my version to give more flexibility to the game player and give more information like the total wealth of society. It is also more clear in terms of programming logic, as it's written in Typescript and benefits from OOP features in comparison to pure JS.
 
 ## "The Evolution of Trust"
 This interactive guide is heavily based off Robert Axelrod's groundbreaking 1984 book, The Evolution of Cooperation! I was also heavily inspired by his 1997 sequel, The Complexity of Cooperation, and Robert Putnam's 2000 book on America's declining "social capital", Bowling Alone.
