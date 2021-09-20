@@ -6,4 +6,4 @@ This interactive guide is heavily based off Robert Axelrod's groundbreaking 1984
 ## "The Game of Trust"
 This game is also known in game theory as the infamous Prisoner's Dilemma. The Prisoner's Dilemma is named after a story where two suspects can either squeal on their partner-in-crime ("cheat"), or stay silent ("cooperate"). I chose not to do this story because 1) in this case, both players "cooperating" would be bad for society, and 2) it's unrealistic, everyone knows that snitches get stitches
 
-## to play visit https://mealavi.github.io/
+## To play visit https://mealavi.github.io/
